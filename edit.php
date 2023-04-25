@@ -27,7 +27,8 @@ try {
         <div class="col-8">
             <?php if ($student): ?>
             <h1 class="text-center mt-5">Edit Student</h1>
-            <form action="update.php" method="post">
+            <form action="update.php" method="POST">
+                <input type="text" hidden="hidden" value="<?php echo $student->id;?>">
                 <div class="form-group mb-3">
                     <label class="form-label">Name</label>
                     <input required value="<?php echo $student->name?>" type="text" class="form-control" name="name" placeholder="Name">
@@ -53,7 +54,10 @@ try {
                     <label class="form-label">Age</label>
                     <input required value="<?php echo $student->age?>" type="number" class="form-control" name="age" placeholder="Age">
                 </div>
-                <button class="btn btn-primary">Update student</button>
+                <div class="">
+                    <a href="index.php" class="btn btn-outline-danger">Cancel</a>
+                    <button type="submit" class="btn btn-secondary">Update student</button>
+                </div>
             </form>
             <?php else:?>
             <p>Student not found</p>

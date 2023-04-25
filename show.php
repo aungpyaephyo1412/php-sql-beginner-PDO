@@ -30,7 +30,17 @@ try {
                     <div class='card-body'>
                         <h5 class='card-title'><?php echo "{$student->name}"?></h5>
                         <p class='card-text'><?php echo "{$student->email}"?></p>
-                        <a href='#' class='btn btn-primary'>Log out</a>
+                        <p class='card-text'><?php echo "{$student->dob}"?></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class='card-text'><?php echo "{$student->age}"?></p>
+                            <p class='card-text'><?php echo "{$student->gender}"?></p>
+                        </div>
+                        <hr>
+                        <div class="btn-group w-100">
+                            <a href='index.php' class='btn btn-outline-primary'>Home</a>
+                            <a href="destroy.php?id=<?php echo $student->id?>" class='btn btn-outline-primary'>Delete</a>
+                            <a href='edit.php?id=<?php echo $student->id?>'  class='btn btn-outline-primary'>Edit</a>
+                        </div>
                     </div>
                     <?php else:?>
                         <p>Student not found</p>;
